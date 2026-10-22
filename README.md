@@ -37,7 +37,28 @@ docker run -p 8501:8501 -v /path/to/extracts:/data:ro -v veritas-audit:/audit ve
 
 ---
 
-## Submission day: running on the official test set
+## 🧪 For Judges & Evaluators: Testing Your Own Data
+VeritasHR is engineered to ingest **any extract layout, naming convention, delimiter, or unseen dataset** without code changes:
+
+1. **Place your extract files** (CSV, Excel, or JSON in any delimiter or date format) into a folder, e.g. `data/evaluation/`.
+2. **Execute the scoring pipeline**:
+   ```bash
+   python -m src.pipeline --data data/evaluation --out submission/issue_list.csv
+   ```
+3. **Inspect the live 3-persona dashboard on your data**:
+   ```bash
+   set VERITAS_DATA_DIR=data/evaluation      # macOS/Linux: export VERITAS_DATA_DIR=data/evaluation
+   streamlit run ui/app.py
+   ```
+   *Console output displays automatic column mappings, record linkage confidence, and anomaly counts.*
+
+4. **Air-Gapped Docker Evaluation**:
+   Mount your evaluation folder with the read-only (`:ro`) flag:
+   ```bash
+   docker run -p 8501:8501 -v /path/to/evaluation/data:/data:ro -v veritas-audit:/audit veritashr
+   ```
+
+## Running on Custom Extracts (Step-by-Step)
 1. Put the organisers' files (any names, CSV/Excel/JSON, plus `data_dictionary.md` and `dependencies.md`) in a new folder, e.g. `data/official/`.
 2. Run:
    ```bash
