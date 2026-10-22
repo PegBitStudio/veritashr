@@ -16,6 +16,8 @@ See [docs/solution_note.md](docs/solution_note.md) for the full write-up and [do
 
 ## Quick start
 ```bash
+git clone https://github.com/PegBitStudio/veritashr.git
+cd veritashr
 python -m venv .venv
 .venv\Scripts\activate          # macOS/Linux: source .venv/bin/activate
 pip install -r requirements.txt
