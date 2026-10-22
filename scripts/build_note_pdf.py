@@ -51,7 +51,7 @@ def main():
     with open(tmp, "w", encoding="utf-8") as f:
         f.write(html)
     with sync_playwright() as p:
-        b = p.chromium.launch()
+        b = p.chromium.launch(channel="msedge")
         page = b.new_page()
         page.goto("file:///" + os.path.join(BASE, "docs", "_note.html").replace(os.sep, "/"))
         page.pdf(path=OUT, format="A4", print_background=True, prefer_css_page_size=True)

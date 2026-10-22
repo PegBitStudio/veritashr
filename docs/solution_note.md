@@ -1,5 +1,5 @@
 # VeritasHR: One Employee, One Truth
-**Solution note: Emirates Group HR Data Quality Challenge (Ignyte)**
+**Solution note: Emirates Group HR Data Quality Challenge (Ignyte)** — [Repo & Code](https://github.com/PegBitStudio/veritashr) • [Demo Video (2m49s)](https://github.com/PegBitStudio/veritashr/blob/main/docs/demo_video.mp4) • [Issue List CSV](https://github.com/PegBitStudio/veritashr/blob/main/submission/issue_list.csv)
 
 ## 1. What it does
 VeritasHR reads HR extracts in whatever shape they arrive, links each employee across systems, finds and explains inconsistencies, ranks them by business impact, and shows what each fix would touch downstream. **A named person must approve every fix.** Nothing is written back to any HR system.
