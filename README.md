@@ -10,7 +10,8 @@ Emirates Group HR Data Quality Challenge (Ignyte).
 - Gives a trust score per report and per field, plus a question box that shows how it read the question and which source it used.
 - **A named person approves every fix.** Decisions go into a tamper-evident audit log. Nothing is ever written back to source systems.
 
-See [docs/solution_note.md](docs/solution_note.md) for the full write-up and [docs/demo_video_script.md](docs/demo_video_script.md) for the demo.
+See [docs/solution_note.md](docs/solution_note.md) ([2-page visual PDF](docs/solution_note.pdf)) for the executive write-up and [watch the Demo Video on Google Drive (2m49s)](https://drive.google.com/file/d/1hzVHcrQZQMo0llZqvo7oXy2aoaLHLOqJ/view?usp=sharing) ([GitHub mirror](docs/demo_video.mp4)).
+Scored issue list is available at [`submission/issue_list.csv`](submission/issue_list.csv).
 
 ---
 
@@ -103,3 +104,6 @@ tests/           34 automated tests
 
 ## Responsible AI
 Human approval of every fix · named reviewer, reason required to reject · hash-chained audit log · no write-back to source systems · deterministic, explainable rules · runs offline with no external AI services · personal identifiers masked on screen by default.
+
+## License
+Released under the [MIT License](LICENSE). Copyright (c) 2026 PegBitStudio. All rights reserved. Prepared for the Emirates Group HR Data Quality Challenge on Ignyte.

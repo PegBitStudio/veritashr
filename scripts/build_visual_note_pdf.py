@@ -343,7 +343,7 @@ HTML_CONTENT = f"""<!doctype html>
     </div>
     <div class="header-links">
       <a class="badge-link" href="https://github.com/PegBitStudio/veritashr">🔗 GitHub Code</a>
-      <a class="badge-link" href="https://github.com/PegBitStudio/veritashr/blob/main/docs/demo_video.mp4">🎥 Demo Video (2m49s)</a>
+      <a class="badge-link" href="https://drive.google.com/file/d/1hzVHcrQZQMo0llZqvo7oXy2aoaLHLOqJ/view?usp=sharing">🎥 Demo Video (Drive)</a>
       <a class="badge-link" href="https://github.com/PegBitStudio/veritashr/blob/main/submission/issue_list.csv">📊 Issue List (CSV)</a>
     </div>
   </div>
