@@ -19,6 +19,8 @@ body { font-family: 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 8.8pt; 
           padding: 9px 14px; border-radius: 6px; margin-bottom: 8px; }
 .banner h1 { margin: 0; font-size: 16pt; letter-spacing: .2px; }
 .banner p { margin: 2px 0 0; font-size: 8.8pt; opacity: .9; }
+.banner a { color: #FFD700; text-decoration: underline; font-weight: 600; }
+a { color: #8A000A; text-decoration: underline; }
 h2 { font-size: 10.6pt; color: #8A000A; margin: 9px 0 3px; padding-bottom: 2px; border-bottom: 1.5px solid #E8C4C8; }
 p { margin: 3px 0; }
 ul, ol { margin: 3px 0 3px 16px; padding: 0; }
@@ -43,10 +45,13 @@ def main():
     # Title block becomes a banner; the rest is rendered as-is
     lines = md.splitlines()
     title = lines[0].lstrip("# ").strip()
-    subtitle = lines[1].strip("* ").strip() if len(lines) > 1 else ""
+    subtitle_raw = lines[1] if len(lines) > 1 else ""
+    subtitle_html = markdown.markdown(subtitle_raw).strip()
+    if subtitle_html.startswith("<p>") and subtitle_html.endswith("</p>"):
+        subtitle_html = subtitle_html[3:-4]
     body = markdown.markdown("\n".join(lines[2:]), extensions=["tables"])
     html = f"""<!doctype html><html><head><meta charset="utf-8"><style>{CSS}</style></head><body>
-<div class="banner"><h1>{title}</h1><p>{subtitle}</p></div>{body}</body></html>"""
+<div class="banner"><h1>{title}</h1><p>{subtitle_html}</p></div>{body}</body></html>"""
     tmp = os.path.join(BASE, "docs", "_note.html")
     with open(tmp, "w", encoding="utf-8") as f:
         f.write(html)
