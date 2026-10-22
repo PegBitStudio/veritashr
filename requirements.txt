@@ -1,0 +1,8 @@
+# Core engine uses only the Python standard library (3.10+).
+# Dashboard and Excel input support:
+pandas>=2.0
+openpyxl>=3.1
+streamlit>=1.40
+
+# Tests
+pytest>=8.0
